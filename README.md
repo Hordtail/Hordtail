@@ -22,7 +22,7 @@ Welcome to my GitHub! I'm a passionate DevOps Engineer with a deep interest in a
 ## 💼 Projects
 Here are a few of my open-source projects and contributions:
 
-- **[Project Name 1]**: A DevOps pipeline setup using Jenkins and Docker.
+- https://github.com/Hordtail/PokedexHordtail : Website made with HTML, CSS, and JavaScript for a Pokedex linked to an API.
 - **[Project Name 2]**: Terraform modules for AWS infrastructure management.
 - **[Project Name 3]**: Kubernetes deployment configuration for scalable applications.
 
