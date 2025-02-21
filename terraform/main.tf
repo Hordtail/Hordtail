@@ -20,7 +20,7 @@ resource "aws_lambda_function" "dns_updater" {
 
   environment {
     variables = {
-      DOMAIN_NAME = "brais"  # Reemplaza con tu dominio real
+      DOMAIN_NAME_B = "brais"  # Reemplaza con tu dominio real
     }
   }
 }

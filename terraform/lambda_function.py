@@ -25,7 +25,7 @@ def lambda_handler(event, context):
         
         import os
 
-        domain_name = os.environ['DOMAIN_NAME']  # Acceder a la variable de entorno
+        domain_name = os.environ['DOMAIN_NAME_B']  # Acceder a la variable de entorno
         print(f"El nombre de dominio es: {domain_name}")
         
         # Obtener IP de la instancia
