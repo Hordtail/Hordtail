@@ -23,6 +23,11 @@ def lambda_handler(event, context):
             print("No DNS_NAMES tag found.")
             return
         
+        import os
+
+        domain_name = os.environ['DOMAIN_NAME']  # Acceder a la variable de entorno
+        print(f"El nombre de dominio es: {domain_name}")
+        
         # Obtener IP de la instancia
         instance_details = ec2_client.describe_instances(InstanceIds=[instance_id])
         ip_address = instance_details['Reservations'][0]['Instances'][0]['PublicIpAddress']
