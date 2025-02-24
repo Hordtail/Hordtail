@@ -15,7 +15,7 @@ def lambda_handler(event, context):
         dns_names = None
         
         for tag in tags['Tags']:
-            if tag['Key'] == 'DNS_NAMES':
+            if tag['Key'] == 'DOMAIN_NAME_B':
                 dns_names = tag['Value'].split(',')
                 break
                 
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
                 'ResourceRecordSet': {
                     'Name': record_name,
                     'Type': 'A',
-                    'TTL': 300,
+                    'TTL': 80,
                     'ResourceRecords': [{'Value': ip_address}]
                 }
             })
