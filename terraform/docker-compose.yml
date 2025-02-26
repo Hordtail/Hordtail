@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.5
+    command:
+      - "--api.insecure=true"  # Habilita la interfaz de administración (solo para pruebas)
+      - "--providers.docker=true"  # Habilita el proveedor Docker
+      - "--entrypoints.web.address=:80"  # Configura el puerto de entrada HTTP
+      - "--entrypoints.websecure.address=:443"  # Configura el puerto de entrada HTTPS
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"  # Habilita ACME para obtener certificados TLS
+      - "--certificatesresolvers.myresolver.acme.email=tuemail@ejemplo.com"  # Correo para ACME
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"  # Almacén para certificados
+    ports:
+      - "80:80"  # Expone el puerto 80 para tráfico HTTP
+      - "443:443"  # Expone el puerto 443 para tráfico HTTPS
+      - "8080:8080"  # Expone el puerto 8080 para el panel de administración de Traefik
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Permite que Traefik acceda a la API de Docker
+      - "./letsencrypt:/letsencrypt"  # Directorio donde se guardan los certificados Let's Encrypt

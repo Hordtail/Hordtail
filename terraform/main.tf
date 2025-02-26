@@ -114,6 +114,17 @@ resource "aws_instance" "brais_instance_lambda" {
     DomainName  = var.domain_name  # Usando la variable `domain_name` de Terraform
     }
 
+  provisioner "file" {
+    source      = "docker-compose.yml"  # Ruta al archivo que quieres transferir
+    destination = "docker-compose.yml"  # Ruta donde se guardará el archivo en EC2
+  connection {
+      type        = "ssh"
+      host        = self.public_ip
+      user        = "ubuntu"
+      private_key = file("/home/brais/Downloads/brais-key.pem")
+    }
+  }
+
   # Usamos provisioners para ejecutar scripts
   provisioner "remote-exec" {
     inline = [
@@ -124,7 +135,8 @@ resource "aws_instance" "brais_instance_lambda" {
 
       # Instalar Docker Compose
       "sudo curl -L \"https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
-      "sudo chmod +x /usr/local/bin/docker-compose"
+      "sudo chmod +x /usr/local/bin/docker-compose",  # Da permisos de ejecución a Docker Compose
+      "sudo sudo docker-compose up -d"  # Levanta el contenedor de Traefik en segundo plano
     ]
 
     # Proporcionar la clave privada SSH para conectarse a la instancia
@@ -137,6 +149,7 @@ resource "aws_instance" "brais_instance_lambda" {
   }
 
 }
+
 
 output "instance_public_ip" {
   value = aws_instance.brais_instance_lambda.public_ip
