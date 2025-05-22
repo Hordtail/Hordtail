@@ -23,8 +23,8 @@ Welcome to my GitHub! I'm a passionate DevOps Engineer with a deep interest in a
 Here are a few of my open-source projects and contributions:
 
 - https://github.com/Hordtail/PokedexHordtail : Website made with HTML, CSS, and JavaScript for a Pokedex linked to an API.
-- **[Project Name 2]**: Terraform modules for AWS infrastructure management.
-- **[Project Name 3]**: Kubernetes deployment configuration for scalable applications.
+- https://github.com/Hordtail/puodex: Inventory management website hosted on AWS, using DevOps and AWS tools, including containers, infrastructure, CI/CD deployment, and monitoring.
+- https://github.com/Hordtail/simple-worker: luengo Simple Worker is a lightweight distributed job processing system. 
 
 ## 🚀 Let's Connect
 - 🌱 I'm always learning new tools and technologies to enhance my DevOps skills.
