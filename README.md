@@ -12,9 +12,9 @@ Welcome to my GitHub! I'm a passionate DevOps Engineer with a deep interest in a
 
 ## 🛠️ Technologies & Tools
 - **Cloud Platforms**: AWS, Azure, Google Cloud
-- **CI/CD**: Jenkins, GitLab CI
+- **CI/CD**: Jenkins, GitHub Actions
 - **Containerization & Orchestration**: Docker, Kubernetes
-- **Infrastructure as Code**: Terraform, CloudFormation, Ansible
+- **Infrastructure as Code**: Terraform, Terragrunt, CloudFormation, Ansible
 - **Monitoring & Logging**: Prometheus, Grafana
 - **Version Control**: Git, GitHub
 - **Scripting**: Bash, Python, YAML
